@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head> 
+	<meta charset="UTF-8">
+	<meta name="author" content="gracianoandreleite">
+    <meta name="description" content="Um projeto visual que representa uma árvore de Natal feito com HTML e CSS, incluindo elementos interativos como estrelas piscantes em diferentes cores.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Árvore de Natal</title> 
+<style>
+	body, html {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.arvore-natal {
+		position: relative;
+	}
+	.topo-arvore, .meio-arvore, .base-arvore {
+		border-left: 10vw solid transparent;
+		border-right: 10vw solid transparent;
+		margin: auto;
+	}
+	.topo-arvore {
+		width: 0;
+		border-bottom: 10vw solid green;
+	}
+	.meio-arvore, .base-arvore {
+		width: 8vw;
+		border-bottom: 9vw solid green;
+	}
+	.tronco-arvore {
+		width: 5vw;
+		height: 12vh;
+		background: rgb(150, 75, 0);
+		margin: auto;
+	}
+	.estrela {
+		text-align: center;
+		font-size: 5vw;
+		color: rgb(230, 230, 0);
+		position: absolute;
+		top: -6vw;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.icone-luz {
+		font-size: 3vw;
+		position: absolute;
+		animation-duration: 0.9s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.luz-vermelha { top: 18%; left: 50%; color: red; animation-name: vermelho-para-amarelo; }
+	.luz-laranja1 { top: 35%; left: 60%; color: orange; animation-name: vermelho-para-amarelo; }
+	.luz-amarela { top: 50%; left: 50%; color: yellow; animation-name: amarelo-para-vermelho; }
+	.luz-laranja2 { top: 45%; left: 25%; color: orange; animation-name: vermelho-para-amarelo; }
+	.luz-vermelha2 { top: 65%; left: 30%; color: red; animation-name: amarelo-para-vermelho; }
+	@keyframes vermelho-para-amarelo {
+		0% { color: red; }
+		50% { color: yellow; }
+		100% { color: orange; }
+	}
+	@keyframes amarelo-para-vermelho {
+		0% { color: yellow; }
+		50% { color: orange; }
+		100% { color: red; }
+	}
+</style>
+</head>
+<body>
+<div class="arvore-natal">
+	<div class="estrela">✷</div>
+	<div class="topo-arvore"></div>
+	<div class="meio-arvore"></div>
+	<div class="base-arvore"></div>
+	<div class="tronco-arvore"></div>
+	<div class="icone-luz luz-vermelha">★</div>
+	<div class="icone-luz luz-laranja1">★</div>
+	<div class="icone-luz luz-amarela">★</div>
+	<div class="icone-luz luz-laranja2">★</div>
+	<div class="icone-luz luz-vermelha2">★</div>
+</div>
+</body>
+</html>
